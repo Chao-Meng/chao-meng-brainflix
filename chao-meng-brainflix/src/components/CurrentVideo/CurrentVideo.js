@@ -6,6 +6,7 @@ return(
     <source src={props.video.video}/>
     Your browser does not support the video tag.
     </video>
+    {/* <h1>{props.video.title}</h1> comment component content */}
 </div>)
 }
 export default CurrentVideo

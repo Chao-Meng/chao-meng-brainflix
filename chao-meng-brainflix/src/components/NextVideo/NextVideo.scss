@@ -1,0 +1,41 @@
+@import "../../styles/partials/variables" ;
+.title{
+    font-size:0.75rem;
+    color:$Sliver;
+    margin-left:1rem;
+    margin-top:1rem;
+}
+.video{
+    display:flex;
+    margin:auto 1rem;
+    align-items: center;;
+    flex-direction: column;
+    &__list{
+        display:flex;
+        justify-content: space-between;
+        margin-top:0.5rem;
+    }
+    &__cover{    
+       width:40%;   
+       margin-right:0.9rem;
+    }
+    &__image{
+        width: 6.3rem;
+        height:3.9rem;
+        object-fit:cover;
+        border-radius: 4px;
+        &::placeholder{
+            background-color: $Mercury;
+        }
+    }
+    &__title{
+        font-size:0.78rem;
+        margin:0;
+        font-weight:600;
+    }
+    &__channel{
+        font-size:0.78rem;
+        font-weight:400;
+        margin-bottom:0;
+    }
+}
