@@ -7,14 +7,15 @@ function NextVideo(props){//or {videoData,onSelect,currentVideoId}
    const flieredVideos=videoData.filter(video=>video.id!==currentVideoId);
     return(<>
         <h2 className="title">NEXT VIDEOS</h2>
-        <div className="video">
+        <div className="nextVideo">
             {flieredVideos.map(video=>(
-                <div className="video__list" key={video.id} onClick={()=>onSelect(video.id)}>
-                   <div className="video__cover"> 
-                   <img  className="video__image" src={video.image} alt={video.title}/>
+                <div className="nextVideo__list" key={video.id} onClick={()=>onSelect(video.id)}>
+                   <div className="nextVideo__cover"> 
+                   <img  className="nextVideo__image" src={video.image} alt={video.title}/>
                    </div>
-                   <div className="video__container"> <h2 className="video__title">{video.title}</h2>
-                    <p className="video__channel">{video.channel}</p></div>
+                   <div className="nextVideo__container"> <h2 className="nextVideo__title">{video.title}</h2>
+                    <p className="nextVideo__channel">{video.channel}</p></div>
+                    {/* <div className="nextVideo__container--right"></div> */}
                 </div>
         ))}
         </div>
