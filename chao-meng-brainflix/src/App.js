@@ -1,24 +1,19 @@
-import Header from './components/Header/Header';
-import './App.scss';
+import React,{useState}from "react";
 
+import Header from './components/Header/Header';
+import './styles/app.scss';
+import CurrentVideo from './components/CurrentVideo/CurrentVideo';
+import videos from "./data/video-details.json"
 function App() {
+  const [videoData,setVideoData]=useState(videos);
+  console.log(videos);
+  const [currentVideo,setCurrentVideo]=useState(videos[0].id);
   return (
     <div className="App">
-      <header className="App-header">
         <Header/>
-        {/* <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
-      </header>
+        <main>
+          <CurrentVideo video={currentVideo}/>
+          </main>   
     </div>
   );
 }
