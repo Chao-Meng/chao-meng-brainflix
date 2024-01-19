@@ -32,7 +32,8 @@
     border:1px  solid $Mercury;
     }
     &__button{
-        width:120%;
+        width: calc(100vw - 2rem); 
+        margin-right:1rem;
         height:2.5rem;
         border-radius: 4px;
         color:$White;

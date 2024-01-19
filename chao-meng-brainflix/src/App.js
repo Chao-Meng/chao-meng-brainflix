@@ -8,10 +8,8 @@ function App() {
   //get video info from JSON file
   const [videoData,setVideoData]=useState(videos);
   console.log("cideoooooooo",videoData);
-  // if(videoData.length===0){
-  //   <div>More videoes are on the way here...</div>
-  // }
-  //get current video id and update it
+
+  //access current video id and update it in the safe way
   const [currentVideoId,setCurrentVideoId]=useState(videoData[0]?.id);
   console.log("current video id",currentVideoId)
   const currentVideo=videos.find(video=>video.id===currentVideoId)
@@ -24,7 +22,9 @@ function App() {
     setCurrentVideoId(newVideoId);
     console.log("new id",newVideoId)
     //update the video list and not include the current video
-    setVideoData(videoData.filter(video => video.id !== newVideoId))
+    setVideoData(videos.filter(video => video.id !== newVideoId))
+     /*update the video list and not include the current video and previous video
+     setVideoData(videoData.filter(video => video.id !== newVideoId))*/
     
   }
   console.log(currentVideo);
