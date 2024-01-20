@@ -1,0 +1,119 @@
+@import "../../styles/partials/variables" ;
+.details{
+    margin-top:-0.5rem;
+    margin-left:1rem;
+    &__divider{
+        height:1px;
+        width:100%;
+        margin:1.3em auto 1rem auto;
+        background-color:$Sliver;
+    }
+    &__title{
+        font-size:1.5rem;
+        opacity: 80%;
+    }
+    &__container{   
+        display: flex;
+       justify-content: flex-start;
+        margin-bottom:-1rem;
+        margin-top:-0.8rem;
+        &--author{
+            font-size:0.8rem;
+            font-weight:600;
+        }
+        &--time{
+            font-size:0.8rem;
+            opacity:50%;
+        }
+        &--left{
+            width:50%;
+        }
+        &--viewImage{
+            width:1.3rem;
+        }
+        &--likeImage{
+            width:1.1rem;
+        }
+        &--views,
+        &--likes{
+            opacity:50%;
+            font-size:0.8rem;
+            margin-left:0.5rem;
+        }
+        &--up{
+            display:flex;
+            margin-bottom:-0.5rem;
+            padding:0;
+        }
+        &--down{
+            display:flex;
+        }
+    }
+    &__descrip{
+        font-size:0.78rem;
+        margin-right:1rem;
+        line-height: 1.47;
+    }
+}
+.comments{
+    margin-left:1rem;
+    margin-top:1rem;
+    &__title{
+        font-size:0.8rem;
+        font-weight:600; 
+    }
+    &__form{
+        display:flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap:1rem;
+        
+    }
+    &__avatar{
+        width:2.25rem;
+        height:2.25rem;
+        border-radius: 50%;
+        margin-top:1rem;
+        background-color: $Mercury;
+    }
+    &__input{
+        width:90%;
+    }
+    &__label{
+        font-size:0.8rem;
+        font-weight: 600;
+        opacity: 40%;
+        line-height: 20px;
+    }
+    &__input{
+        border-radius: 4px;
+        border-color:$Mercury;
+        background-color: $Alabaster;
+        padding-top:0.5rem;
+        font-size:0.75rem;
+    }
+    &__button{
+        width: calc(82vw - 2rem); 
+        margin-right:1rem;
+        margin-top:0.8rem;
+        height: 2.3rem;
+        border-radius: 4px;
+        color:$White;
+        background-color:$BrainFlix-Blue;
+        border:none;
+        font-size:0.75rem;
+        font-weight:bold;
+        position:relative;
+        &::before{
+            content: ""; 
+            background-image: url("../../assets/icons/add_comment.svg");
+            background-size: contain; 
+            width: 20px; 
+            height: 20px; 
+            position: absolute; 
+            left: 10px; 
+            top: 50%;
+            transform: translateY(-50%);
+    }
+    }
+}

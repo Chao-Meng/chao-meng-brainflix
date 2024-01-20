@@ -1,9 +1,11 @@
 import {useState,useEffect}from "react";
-import './styles/app.scss';
+import './styles/App.scss';
 import Header from './components/Header/Header';
 import CurrentVideo from './components/CurrentVideo/CurrentVideo';
 import NextVideo from "./components/NextVideo/NextVideo";
-import videos from "./data/video-details.json"
+import VideoDetails from "./components/videoDetails/VideoDetails";
+import videos from "./data/video-details.json";
+
 function App() {
   //get video info from JSON file
   const [videoData,setVideoData]=useState(videos);
@@ -34,6 +36,8 @@ function App() {
         <Header/>
         <main>
           <CurrentVideo video={currentVideo}/>
+          <VideoDetails video={currentVideo} videoData={videoData}  onSelect={handleVideoSelect} 
+          currentVideoId={currentVideoId}/>
           {videoData.length>0?( <NextVideo videoData={videoData} 
           onSelect={handleVideoSelect} 
           currentVideoId={currentVideoId}/>):<div>More videoes are on the way here...</div>}
