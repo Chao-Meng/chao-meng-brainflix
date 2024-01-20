@@ -20,15 +20,13 @@
     &__container{
         display:flex;
         margin-right:1rem;
-      
         @include tablet{
-            //gap:15rem;
             margin-top: 0.9rem;  
         }
         &--left{
             display:flex;
             flex-direction: column;
-            width:100%;
+            width:80%;
             margin-left:1rem;
             gap:1rem;
             @include tablet{
@@ -39,8 +37,7 @@
             }
         }
         &--right{
-            width:10%;
-            
+            width:10%;    
         }
     } 
     &__input{
