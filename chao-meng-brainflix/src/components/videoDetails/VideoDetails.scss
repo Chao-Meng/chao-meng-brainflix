@@ -6,7 +6,7 @@
         height:1px;
         width:100%;
         margin:1.3em auto 1rem auto;
-        background-color:$Sliver;
+        background-color:$Mercury;
     }
     &__title{
         font-size:1.5rem;
@@ -67,13 +67,15 @@
         justify-content: space-between;
         align-items: flex-start;
         gap:1rem;
-        
+        &--left{
+            margin-top:1.8rem;
+        }
     }
     &__avatar{
         width:2.25rem;
         height:2.25rem;
         border-radius: 50%;
-        margin-top:1rem;
+        margin-top:-0.4rem;
         background-color: $Mercury;
     }
     &__input{
@@ -114,6 +116,34 @@
             left: 10px; 
             top: 50%;
             transform: translateY(-50%);
+        }
     }
+    &__container{
+        display:flex;
     }
-}
+    &__list{
+        &--right{
+            margin-right:1rem;
+            margin-left:1rem;
+        }
+        &--up{
+            display:flex;
+            justify-content: space-between;
+            margin-top:-1rem;
+        }
+    }
+    &__name{
+        font-size:0.8rem;
+        font-weight:600;
+    }
+    &__time{
+        font-size:0.8rem;
+        opacity: 40%;
+    }
+    &__comment{
+        font-size:0.8rem;
+        margin:-0.3rem 0;
+        line-height: 17.5px;;
+    }
+    
+}   

@@ -54,7 +54,7 @@ function VideoDetails(props){
             <div className="details__divider"></div>
             {props.video.comments.map(comment => (
             <div className="comments__list" key={comment.id}>
-                <div>
+                <div className="comments__container">
                     <div className="comments__list--left"> 
                         <img className="comments__avatar"/>
                     </div>
@@ -63,7 +63,7 @@ function VideoDetails(props){
                             <p className="comments__name">{comment.name}</p>
                             <p className="comments__time">{formatTime(comment.timestamp)}</p>
                         </div>
-                        <p className="comemnts__comment">{comment.comment}</p>
+                        <p className="comments__comment">{comment.comment}</p>
                     </div>
                 </div>
                 <div className="details__divider"></div>
