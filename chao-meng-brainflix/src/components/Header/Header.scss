@@ -1,20 +1,42 @@
 @import "../../styles/partials/variables" ;
+@import "../../styles/partials/mixins" ;
 .header{
     width:100%;
+    @include tablet{
+        display:flex;
+        justify-content: flex-start;
+    }
     &__title{
         display:flex;
         justify-content: center;
-        margin:0.9rem auto;
+        margin:0.9rem 0;
+        @include tablet{
+            justify-content:left;
+            align-items: flex-start;
+            width:26.9vw;
+            margin-left:2.25rem;
+        }
     }
     &__container{
         display:flex;
         margin-right:1rem;
+      
+        @include tablet{
+            //gap:15rem;
+            margin-top: 0.9rem;  
+        }
         &--left{
             display:flex;
             flex-direction: column;
-            width:80%;
+            width:100%;
             margin-left:1rem;
             gap:1rem;
+            @include tablet{
+                flex-direction: row;
+                width:56vw;
+                justify-content: space-around;
+                gap:1.5rem;
+            }
         }
         &--right{
             width:10%;
@@ -24,7 +46,7 @@
     &__input{
         height:2rem;
         background-image: url("../../assets/icons/search.svg");
-        background-size:6.5%;
+        background-size:1rem;
         background-position: 0.3rem center;
         background-repeat:no-repeat;
         align-items: center;
@@ -32,6 +54,9 @@
         font-size:0.75rem;
         border-radius: 4px;
         border:1px  solid $Mercury;
+        @include tablet{
+          flex:0 0 47%;
+        }
     }
     &__button{
         width: calc(100vw - 2rem); 
@@ -55,11 +80,18 @@
             top: 50%;
             transform: translateY(-50%);
         }
+        @include tablet{
+           margin-right:0.5rem;
+        }
     }
     &__avatar{
         width:2.25rem;
         height:2.25rem;
         border-radius: 50%;
         margin-left:0.8rem;
+        @include tablet{
+            width:2.5rem;
+            height:2.5rem;
+        }
     }
 }

@@ -12,7 +12,7 @@ return<header>
                 <input className="header__input" placeholder="Search" type="text"/>   
                 <button className="header__button">UPLOAD</button>
             </div>
-        <div className="header__container--right">
+            <div className="header__container--right">
             <img className="header__avatar" src={avatar}></img>
         </div>
          </div>
