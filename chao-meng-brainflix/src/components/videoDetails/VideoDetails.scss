@@ -1,32 +1,73 @@
 @import "../../styles/partials/variables" ;
+@import "../../styles/partials/mixins";
 .details{
     margin-top:-0.5rem;
     margin-left:1rem;
+    @include tablet{
+        margin-top:1.75rem;
+        margin-left:2.25rem;
+    }
     &__divider{
         height:1px;
         width:100%;
         margin:1.3em auto 1rem auto;
         background-color:$Mercury;
+        &--mobile{
+            height:1px;
+            width:100%;
+            margin:1.3em auto 1rem auto;
+            background-color:$Mercury;
+            @include tablet{
+                visibility:hidden;
+            }
+        }
     }
     &__title{
         font-size:1.5rem;
         opacity: 80%;
+        @include tablet{
+            font-size:2rem;
+        }
     }
     &__container{   
         display: flex;
-       justify-content: flex-start;
+        justify-content: flex-start;
         margin-bottom:-1rem;
         margin-top:-0.8rem;
+            @include tablet{
+                justify-content:space-between;
+                margin-right:2.25rem;
+                margin-top:-3rem;
+                margin-bottom:-1.5rem;
+            }
         &--author{
             font-size:0.8rem;
             font-weight:600;
+            @include tablet{
+                font-size:0.9rem;
+            }
         }
         &--time{
             font-size:0.8rem;
             opacity:50%;
+            @include tablet{
+                font-size:0.9rem;
+            }
         }
         &--left{
             width:50%;
+            @include tablet{ 
+                display:flex;
+                justify-content: flex-start;
+                gap:3rem;
+                
+             }
+        }
+        &--right{
+            @include tablet{
+                display:flex;
+                gap:1.7rem;
+            }
         }
         &--viewImage{
             width:1.3rem;
@@ -39,6 +80,9 @@
             opacity:50%;
             font-size:0.8rem;
             margin-left:0.5rem;
+            @include tablet{
+                font-size:0.9rem;
+            }
         }
         &--up{
             display:flex;
@@ -53,22 +97,46 @@
         font-size:0.78rem;
         margin-right:1rem;
         line-height: 1.47;
+        @include tablet{
+            font-size:0.9rem;
+            line-height:1.4rem;
+        }
     }
 }
 .comments{
     margin-left:1rem;
     margin-top:1.5rem;
+    @include tablet{
+        margin-left:2.25rem;
+        margin:2.75rem 2.25rem 0 2.25rem;
+    }
     &__title{
         font-size:0.8rem;
         font-weight:600; 
+        @include tablet{
+            margin-top:-0.1rem;
+            font-size:0.9rem;
+        }
     }
     &__form{
         display:flex;
         justify-content: space-between;
         align-items: flex-start;
         gap:1rem;
+        @include tablet{
+            margin-bottom:1.8rem;
+        }
         &--left{
             margin-top:1.8rem;
+        }
+        &--right{
+            @include tablet{
+                display: flex;
+            }
+        }
+        &--content{
+            width:65vw;
+            margin-right:-1.2rem;
         }
     }
     &__avatar{
@@ -77,9 +145,18 @@
         border-radius: 50%;
         margin-top:-0.4rem;
         background-color: $Mercury;
+        @include tablet{
+            width:2.5rem;
+            height:2.5rem;
+        }
     }
     &__input{
         width:90%;
+        height:5rem;
+        @include tablet{
+            height:1.6rem;
+            margin-top:0.2rem;
+        }
     }
     &__label{
         font-size:0.8rem;
@@ -117,14 +194,26 @@
             top: 50%;
             transform: translateY(-50%);
         }
+        @include tablet{
+            margin-top:1.4rem;
+            width: calc(25vw - 2.4rem); 
+            margin-right:0;
+        }
     }
     &__container{
         display:flex;
     }
     &__list{
+        &--left{
+            margin-top:1.3rem;
+        }
         &--right{
             margin-right:1rem;
             margin-left:1rem;
+            @include tablet{
+                margin-top:1rem;
+                margin-bottom:0.6rem;
+            }
         }
         &--up{
             display:flex;
@@ -143,7 +232,12 @@
     &__comment{
         font-size:0.8rem;
         margin:-0.3rem 0;
-        line-height: 17.5px;;
+        line-height: 17.5px;
+        @include tablet{
+            font-size:0.85rem;
+
+            line-height:20px;
+        }
     }
     
 }   

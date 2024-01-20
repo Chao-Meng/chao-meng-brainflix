@@ -16,7 +16,7 @@ function VideoDetails(props){
         <section className="details" key={props.video.id}>
             <>
             <h2 className="details__title">{props.video.title}</h2>
-                <div className="details__divider"></div>
+                <div className="details__divider--mobile"></div>
              <div className="details__container">
                 <div className="details__container--left">
                     <p className="details__container--author">By {props.video.channel}</p>
@@ -38,7 +38,7 @@ function VideoDetails(props){
              </>
         </section>
         <form className="comments">
-                <p className="comments__title">Comments</p>
+                <p className="comments__title">{props.video.comments.length} Comments</p>
                 <div className="comments__form">
                 <div className="comments__form--left">
                     <img className="comments__avatar" src={avatar}/>
@@ -46,7 +46,7 @@ function VideoDetails(props){
                 <div className="comments__form--right">
                     <div className="comments__form--content">
                         <label className="comments__label">JOIN THE VONVERSATION</label>
-                        <textarea type="text" className="comments__input" rows="6" placeholder="Add a new comment"></textarea>
+                        <textarea type="text" className="comments__input"  placeholder="Add a new comment"></textarea>
                     </div>
                      <button className="comments__button">COMMENT</button>
                 </div>
