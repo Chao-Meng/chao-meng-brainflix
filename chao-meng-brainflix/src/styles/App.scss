@@ -1,0 +1,29 @@
+@import "../styles/partials/variables" ;
+@import "../styles/partials/mixins" ;
+.app{
+    &__container{
+        @include desktop{
+            display:flex;
+            //width:98%;
+            align-items: start;
+            margin-left:6.2rem;;
+        }
+    }
+    &__videoDetails{
+        @include desktop{
+            flex:1;
+        }
+    }
+    &__videoList{
+        @include desktop{
+            flex:1;
+        }
+    }
+    &__divider{
+        @include desktop{
+            height:70vh;
+            width:1px;
+            background-color:$Mercury;
+        }
+    }
+}

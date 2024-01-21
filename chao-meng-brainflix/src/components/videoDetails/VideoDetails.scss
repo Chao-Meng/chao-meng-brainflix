@@ -1,5 +1,12 @@
 @import "../../styles/partials/variables" ;
 @import "../../styles/partials/mixins";
+.container{
+    @include desktop{
+        display:flex;
+        flex-direction: column;
+        width:57vw;
+    }
+}
 .details{
     margin-top:-0.5rem;
     margin-left:1rem;
@@ -7,19 +14,25 @@
         margin-top:1.75rem;
         margin-left:2.25rem;
     }
+    @include desktop{
+        margin-top:0;
+    }
     &__divider{
-        height:1px;
-        width:100%;
-        margin:1.3em auto 1rem auto;
-        background-color:$Mercury;
+        @include details__divider;
         &--mobile{
-            height:1px;
-            width:100%;
-            margin:1.3em auto 1rem auto;
-            background-color:$Mercury;
+            @include details__divider;
             @include tablet{
                 visibility:hidden;
             }
+        }
+        &--desktop{
+            @include details__divider;
+            @include desktop{
+                visibility:hidden;
+            }
+        }
+        @include desktop{
+            width:54.3vw;
         }
     }
     &__title{
@@ -101,11 +114,16 @@
             font-size:0.9rem;
             line-height:1.4rem;
         }
+        @include desktop{
+            font-size:0.85rem;
+        }
     }
 }
 .comments{
     margin-left:1rem;
     margin-top:1.5rem;
+    display:flex;
+    flex-direction: column;
     @include tablet{
         margin-left:2.25rem;
         margin:2.75rem 2.25rem 0 2.25rem;
@@ -132,6 +150,9 @@
         &--right{
             @include tablet{
                 display: flex;
+            }
+            @include desktop{
+                width:47vw;
             }
         }
         &--content{

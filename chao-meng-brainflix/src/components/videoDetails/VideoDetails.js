@@ -12,7 +12,7 @@ function VideoDetails(props){
     });
   }
     return(
-        <>
+        <div className="container">
         <section className="details" key={props.video.id}>
             <>
             <h2 className="details__title">{props.video.title}</h2>
@@ -51,9 +51,10 @@ function VideoDetails(props){
                      <button className="comments__button">COMMENT</button>
                 </div>
             </div>
-            <div className="details__divider"></div>
+            {/* <div className="details__divider"></div> */}
             {props.video.comments.map(comment => (
             <div className="comments__list" key={comment.id}>
+                 <div className="details__divider"></div>
                 <div className="comments__container">
                     <div className="comments__list--left"> 
                         <img className="comments__avatar"/>
@@ -66,12 +67,15 @@ function VideoDetails(props){
                         <p className="comments__comment">{comment.comment}</p>
                     </div>
                 </div>
-                <div className="details__divider"></div>
+                 {/* <div className="details__divider--mobile"></div>  */}
                 
             </div>
+           
+            
         ))}
+         <div className="details__divider--desktop"></div> 
         </form>
-        </>
+        </div>
     )
 }
 export default VideoDetails

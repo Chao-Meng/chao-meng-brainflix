@@ -32,16 +32,18 @@ function App() {
   console.log(currentVideo);
 
   return (
-    <div className="App">
+    <div className="app">
         <Header/>
         <main>
           <CurrentVideo video={currentVideo}/>
-          <VideoDetails video={currentVideo} videoData={videoData}  onSelect={handleVideoSelect} 
+          <div className="app__container">
+          <VideoDetails  className="app__videoDetails" video={currentVideo} videoData={videoData}  onSelect={handleVideoSelect} 
           currentVideoId={currentVideoId}/>
-          {videoData.length>0?( <NextVideo videoData={videoData} 
+            <div className="app__divider"></div>
+          {videoData.length>0?( <NextVideo className="app__videoList" videoData={videoData} 
           onSelect={handleVideoSelect} 
           currentVideoId={currentVideoId}/>):<div>More videoes are on the way here...</div>}
-         
+           </div>
           </main>   
     </div>
   );

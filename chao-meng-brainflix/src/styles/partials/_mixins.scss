@@ -9,3 +9,10 @@
         @content;
     }
 }
+
+@mixin details__divider{
+    height:1px;
+        width:100%;
+        margin:1.3em auto 1rem auto;
+        background-color:$Mercury;
+}
