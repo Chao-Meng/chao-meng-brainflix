@@ -10,7 +10,14 @@
     display:flex;
     align-items: center;;
     flex-direction: column;
+    @include desktop{margin-top:-1rem;}
     &__all{
+        @include tablet{
+            flex-direction: column;
+            margin-top:0.5rem;
+            width:38vw;
+            margin-left:1.25rem;
+        }
         @include desktop{
             flex-direction: column;
             margin-top:0.5rem;
@@ -39,6 +46,9 @@
         &::placeholder{
             background-color: $Mercury;
         }
+        @include tablet{
+            width:6.9rem;
+        }
     }
     &__container{
         width:100%;
@@ -50,6 +60,9 @@
         font-size:0.78rem;
         margin:0;
         font-weight:600;
+        @include tablet{
+            font-size:0.85rem;
+        }
     }
     &__channel{
         font-size:0.78rem;

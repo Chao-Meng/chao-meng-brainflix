@@ -21,7 +21,7 @@
     }
     &__divider{
         @include desktop{
-            height:70vh;
+            height:50rem;
             width:1px;
             background-color:$Mercury;
         }

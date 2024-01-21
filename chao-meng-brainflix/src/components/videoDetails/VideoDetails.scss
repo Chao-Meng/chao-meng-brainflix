@@ -143,6 +143,7 @@
         gap:1rem;
         @include tablet{
             margin-bottom:1.8rem;
+            justify-content: flex-start;;
         }
         &--left{
             margin-top:1.8rem;
@@ -156,8 +157,11 @@
             }
         }
         &--content{
-            width:65vw;
+            width:calc(88vw - 2rem);
             margin-right:-1.2rem;
+            @include tablet{
+                width:65vw;
+            }
         }
     }
     &__avatar{
