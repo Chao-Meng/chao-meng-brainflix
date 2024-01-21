@@ -1,23 +1,37 @@
 @import "../../styles/partials/variables" ;
+@import "../../styles/partials/mixins" ;
 .title{
-    font-size:0.75rem;
+    font-size:$font-size-78;
     color:$Sliver;
-    margin-left:1rem;
-    margin-top:1rem;
+    margin:1rem;
+    @include tablet{
+        font-size:$font-size-80;
+        margin:1.65rem 2.25rem 0.2rem;
+    }
 }
 .nextVideo{
     display:flex;
     align-items: center;;
     flex-direction: column;
+    @include tablet{
+        margin-left:2.25rem;
+        margin-bottom:1.5rem;
+    }
     &__list{
         width:100%;
         display:flex;
         align-items: flex-start;
         gap:0.9rem;
         margin-top:0.5rem;
+        @include tablet{
+            margin-top:1.3rem;
+        }
     }
     &__cover{    
        width:8rem;   
+       @include tablet{
+        margin-left:-1rem;
+       }
     }
     &__image{
         width: 6.3rem;
@@ -28,21 +42,39 @@
         &::placeholder{
             background-color: $Mercury;
         }
+        @include tablet{
+            width:6.8rem;
+            height:4.1rem;
+        }
     }
     &__container{
-        width:100%;
+        width:58vw;
+        margin-right:1rem;
         display:flex;
         flex-direction: column;
-
+        @include tablet{
+            width:22vw;
+        }
     }
     &__title{
-        font-size:0.78rem;
+        font-size:$font-size-78;
         margin:0;
-        font-weight:600;
+        font-weight:$font-bold;
+        @include tablet{
+            font-size:$font-size-85;
+            font-weight:$font-bold;
+            line-height:20px;
+            opacity: 80%;;
+        }
     }
     &__channel{
-        font-size:0.78rem;
-        font-weight:400;
+        font-size:$font-size-78;
+        font-weight:$font-normal;
         margin-bottom:0;
+        @include tablet{
+            font-size:$font-size-85;
+            opacity: 70%;;
+            margin-top:0.6rem;
+        }
     }
 }

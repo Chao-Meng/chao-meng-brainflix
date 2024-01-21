@@ -23,10 +23,10 @@
         }
     }
     &__title{
-        font-size:1.5rem;
+        font-size:$font-size-150;
         opacity: 80%;
         @include tablet{
-            font-size:2rem;
+            font-size:$font-size-200;
         }
     }
     &__container{   
@@ -41,17 +41,17 @@
                 margin-bottom:-1.5rem;
             }
         &--author{
-            font-size:0.8rem;
-            font-weight:600;
+            font-size:$font-size-80;
+            font-weight:$font-normal;
             @include tablet{
-                font-size:0.9rem;
+                font-size:$font-size-90;
             }
         }
         &--time{
-            font-size:0.8rem;
+            font-size:$font-size-80;
             opacity:50%;
             @include tablet{
-                font-size:0.9rem;
+                font-size:$font-size-85;
             }
         }
         &--left{
@@ -78,10 +78,10 @@
         &--views,
         &--likes{
             opacity:50%;
-            font-size:0.8rem;
+            font-size:$font-size-80;
             margin-left:0.5rem;
             @include tablet{
-                font-size:0.9rem;
+                font-size:$font-size-90;
             }
         }
         &--up{
@@ -94,11 +94,11 @@
         }
     }
     &__descrip{
-        font-size:0.78rem;
+        font-size:$font-size-78;
         margin-right:1rem;
         line-height: 1.47;
         @include tablet{
-            font-size:0.9rem;
+            font-size:$font-size-90;
             line-height:1.4rem;
         }
     }
@@ -111,8 +111,8 @@
         margin:2.75rem 2.25rem 0 2.25rem;
     }
     &__title{
-        font-size:0.8rem;
-        font-weight:600; 
+        font-size:$font-size-80;
+        font-weight:$font-normal; 
         @include tablet{
             margin-top:-0.1rem;
             font-size:0.9rem;
@@ -135,8 +135,11 @@
             }
         }
         &--content{
-            width:65vw;
+            width:77vw;
             margin-right:-1.2rem;
+            @include tablet{
+                width:65vw;
+            }
         }
     }
     &__avatar{
@@ -159,8 +162,8 @@
         }
     }
     &__label{
-        font-size:0.8rem;
-        font-weight: 600;
+        font-size:$font-size-80;
+        font-weight: $font-normal;
         opacity: 40%;
         line-height: 20px;
     }
@@ -169,7 +172,7 @@
         border-color:$Mercury;
         background-color: $Alabaster;
         padding-top:0.5rem;
-        font-size:0.75rem;
+        font-size:$font-size-75;
     }
     &__button{
         width: calc(82vw - 2rem); 
@@ -180,8 +183,8 @@
         color:$White;
         background-color:$BrainFlix-Blue;
         border:none;
-        font-size:0.75rem;
-        font-weight:bold;
+        font-size:$font-size-75;
+        font-weight:$font-bold;
         position:relative;
         &::before{
             content: ""; 
@@ -222,11 +225,11 @@
         }
     }
     &__name{
-        font-size:0.8rem;
-        font-weight:600;
+        font-size:$font-size-80;
+        font-weight:$font-bold;
     }
     &__time{
-        font-size:0.8rem;
+        font-size:$font-size-80;
         opacity: 40%;
     }
     &__comment{
@@ -234,7 +237,7 @@
         margin:-0.3rem 0;
         line-height: 17.5px;
         @include tablet{
-            font-size:0.85rem;
+            font-size:$font-size-85;
 
             line-height:20px;
         }
