@@ -11,10 +11,17 @@
         justify-content: center;
         margin:0.9rem 0;
         @include tablet{
-            justify-content:left;
+            justify-content:flex-start;
             align-items: flex-start;
             width:26.9vw;
             margin-left:2.25rem;
+        }
+        @include desktop{
+            justify-content: flex-start;
+            align-items: center;
+            width:20vw;
+            margin:auto;
+            margin-left:8rem;
         }
     }
     &__container{
@@ -22,6 +29,9 @@
         margin-right:1rem;
         @include tablet{
             margin-top: 0.9rem;  
+        }
+        @include desktop{
+            width:49vw;
         }
         &--left{
             display:flex;
@@ -34,6 +44,10 @@
                 width:56vw;
                 justify-content: space-around;
                 gap:1.5rem;
+            }
+            @include desktop{
+                width:33vw;
+                margin-right:1.5rem;
             }
         }
         &--right{
