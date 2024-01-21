@@ -1,7 +1,7 @@
 @import "../../styles/partials/variables" ;
 @import "../../styles/partials/mixins" ;
 .title{
-    font-size:0.75rem;
+    font-size:$font-size-75;
     color:$Sliver;
     margin-left:1rem;
     margin-top:1rem;
@@ -57,15 +57,15 @@
 
     }
     &__title{
-        font-size:0.78rem;
+        font-size:$font-size-78;
         margin:0;
         font-weight:600;
         @include tablet{
-            font-size:0.85rem;
+            font-size:$font-size-85;
         }
     }
     &__channel{
-        font-size:0.78rem;
+        font-size:$font-size-78;
         font-weight:400;
         margin-bottom:0;
     }

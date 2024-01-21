@@ -16,9 +16,8 @@ function NextVideo(props){//or {videoData,onSelect,currentVideoId}
                    <div className="nextVideo__container"> <h2 className="nextVideo__title">{video.title}</h2>
                     <p className="nextVideo__channel">{video.channel}</p></div>
                 </div>
-        ))}
+            ))}
         </div>
-        </div>
-    )
+    </div> )
 }
 export default NextVideo

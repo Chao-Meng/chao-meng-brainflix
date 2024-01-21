@@ -51,7 +51,6 @@ function VideoDetails(props){
                      <button className="comments__button">COMMENT</button>
                 </div>
             </div>
-            {/* <div className="details__divider"></div> */}
             {props.video.comments.map(comment => (
             <div className="comments__list" key={comment.id}>
                  <div className="details__divider"></div>
@@ -66,16 +65,11 @@ function VideoDetails(props){
                         </div>
                         <p className="comments__comment">{comment.comment}</p>
                     </div>
-                </div>
-                 {/* <div className="details__divider--mobile"></div>  */}
-                
-            </div>
-           
-            
-        ))}
+                </div>      
+            </div>    
+            ))}
          <div className="details__divider--desktop"></div> 
         </form>
-        </div>
-    )
+    </div>) 
 }
 export default VideoDetails
