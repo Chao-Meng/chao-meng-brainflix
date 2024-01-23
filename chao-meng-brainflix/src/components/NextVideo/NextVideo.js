@@ -3,6 +3,7 @@ function NextVideo(props){//or {videoData,onSelect,currentVideoId}
     const videoData=props.videoData;
     const onSelect=props.onSelect;
     const currentVideoId=props.currentVideoId;
+    console.log("filter",props.videoData);
     //filter current playing video and donot display it on next video list
    const flieredVideos=videoData.filter(video=>video.id!==currentVideoId);
     return(<div className="nextVideo__all">
