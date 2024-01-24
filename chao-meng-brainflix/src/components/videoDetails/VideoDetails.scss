@@ -1,5 +1,8 @@
 @import "../../styles/partials/variables" ;
 @import "../../styles/partials/mixins";
+// For TA or marker:
+//@import is an older feature of Sass, but @use is not working for me at the moment, 
+// so I am using import. I would greatly appreciate any comments on how to properly use @use.
 .container{
     @include desktop{
         display:flex;
@@ -210,7 +213,7 @@
         position:relative;
         &::before{
             content: ""; 
-            background-image: url("../../assets/icons/add_comment.svg");
+            background-image: url("../../assets/images/add_comment.svg");
             background-size: contain; 
             width: 20px; 
             height: 20px; 

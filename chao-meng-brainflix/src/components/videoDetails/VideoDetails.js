@@ -1,6 +1,6 @@
 import "./VideoDetails.scss"
-import views from "../../assets/icons/views.svg"
-import likes from "../../assets/icons/likes.svg"
+import views from "../../assets/images/views.svg"
+import likes from "../../assets/images/likes.svg"
 import avatar from "../../assets/images/Mohan-muruge.jpg"
 function VideoDetails(props){
   function formatTime(timestamp){
@@ -11,21 +11,18 @@ function VideoDetails(props){
         year:'numeric'
     });
   }
-  console.log("hhhhhhhhhhhh",props.videoData.likes)
+ 
   const likesNum = props.videoData?.likes;
   const viewsNum = props.videoData?.views;
 
-  if (!props.videoData || likes === undefined || views === undefined) {
+  if (!props.videoData ||!props.videoData.comments|| likes === undefined || views === undefined) {
     return <div>Loading...</div>;
   }
-//   if (!props.videoData) {
-//     return <div>Loading...</div>;
-// }
     return(
         <div className="container">
         <section className="details" key={props.videoData.id}>
             <>
-            <h2 className="details__title">{props.videoData.title}</h2>
+            <h1 className="details__title">{props.videoData.title}</h1>
                 <div className="details__divider--mobile"></div>
              <div className="details__container">
                 <div className="details__container--left">
@@ -34,11 +31,11 @@ function VideoDetails(props){
                 </div>
                 <div className="details__container--right">
                     <div className="details__container--up">
-                        <img className="details__container--viewImage" src={views}></img>
+                        <img className="details__container--viewImage" src={views} alt={props.videoData.title}></img>
                         <p className="details__container--views">{viewsNum}</p>
                     </div>
                     <div className="details__container--down">
-                    <img className="details__container--likeImage" src={likes}></img>
+                    <img className="details__container--likeImage" src={likes} alt={props.videoData.title}></img>
                         <p className="details__container--likes">{likesNum}</p>
                     </div>
                 </div>
@@ -47,11 +44,11 @@ function VideoDetails(props){
              <div className="details__descrip">{props.videoData.description}</div>
              </>
         </section>
-        <form className="comments">
-                <p className="comments__title">{props.videoData.comments.length} Comments</p>
+         <form className="comments">
+                 <p className="comments__title">{props.videoData.comments.length} Comments</p> 
                 <div className="comments__form">
                 <div className="comments__form--left">
-                    <img className="comments__avatar" src={avatar}/>
+                    <img className="comments__avatar" src={avatar} alt={props.videoData.title}/>
                 </div>
                 <div className="comments__form--right">
                     <div className="comments__form--content">
@@ -66,7 +63,7 @@ function VideoDetails(props){
                  <div className="details__divider"></div>
                 <div className="comments__container">
                     <div className="comments__list--left"> 
-                        <img className="comments__avatar"/>
+                        <img className="comments__avatar" />
                     </div>
                     <div className="comments__list--right">
                         <div className="comments__list--up">
@@ -79,7 +76,7 @@ function VideoDetails(props){
             </div>    
             ))}
          <div className="details__divider--desktop"></div> 
-        </form>
+        </form> 
     </div>) 
 }
 export default VideoDetails

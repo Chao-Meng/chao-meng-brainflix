@@ -56,7 +56,7 @@
     } 
     &__input{
         height:2rem;
-        background-image: url("../../assets/icons/search.svg");
+        background-image: url("../../assets/images/search.svg");
         background-size:1rem;
         background-position: 0.3rem center;
         background-repeat:no-repeat;
@@ -82,7 +82,7 @@
         position:relative;
         &::before{
             content: ""; 
-            background-image: url("../../assets/icons/upload.svg");
+            background-image: url("../../assets/images/upload.svg");
             background-size: contain; 
             width: 20px; 
             height: 20px; 
