@@ -3,8 +3,6 @@ import './styles/App.scss';
 import Page from "./pages/Page/Page"
 
 function App() {
-
-
   return (
     <BrowserRouter>
       <Routes>

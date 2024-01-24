@@ -52,7 +52,6 @@ const getVideoDetails = (videoId) => {
   
   useEffect(() => {
     const video = videoData.find(video => video.id === currentVideoId);
-    //setCurrentVideo(video);
   }, [videoId]);
 
   const handleVideoSelect = (newVideoId) => {
