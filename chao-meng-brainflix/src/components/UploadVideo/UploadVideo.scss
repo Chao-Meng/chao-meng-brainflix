@@ -18,7 +18,12 @@
             font-size:$font-size-200;
         }
     }
-  
+    &__container{
+        @include desktop{
+            display: flex;
+            width:80vw;///////need modify
+        }
+    }
    &__imgContainer{
         width:100%;
         margin-top:-0.2rem;
@@ -126,11 +131,19 @@
             order:1;
             width:22%;
         } 
+        @include desktop{
+            width:12%;
+        }
+    }
+    &__button{
+        @include universal__button;
+        @include tablet{
+            width:22%;
+            order:2;
+        }
+        @include desktop{
+            width:11.8%;
+        }
     }
 }
-.universal__button{
-    @include tablet{
-        width:22%;
-        order:2;
-    }
-}
+

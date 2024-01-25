@@ -79,4 +79,7 @@
             height:2.5rem;
         }
     }
+    &__button{
+        @include universal__button;
+    }
 }
