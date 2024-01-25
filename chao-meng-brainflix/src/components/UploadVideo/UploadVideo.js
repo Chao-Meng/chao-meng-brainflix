@@ -4,8 +4,8 @@ import cover from "../../assets/images/Upload-video-preview.jpg"
 function UploadVideo() {
     return (
         <div className="upVideo">
-    
             <h1 className="upVideo__title">Upload Video</h1>
+            <div className="upVideo__divider"></div>
             <div>
                 <p className="upVideo__subtitle"> VIDEO THUMBNAIL</p>
                 <div className="upVideo__imgContainer">
