@@ -1,10 +1,8 @@
 import "./CurrentVideo.scss"
 function CurrentVideo(props){
-    console.log(props.video);
     if (!props.video) {
         return <div>Loading...</div>;
     }
-    console.log("test",props.video.image);
     
 return(
 <div className="video"> 

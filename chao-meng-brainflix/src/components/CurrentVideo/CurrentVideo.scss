@@ -1,5 +1,5 @@
-@import "../../styles/partials/variables" ;
-@import "../../styles/partials/mixins" ;
+@use "../../styles/partials/variables" as * ;
+@use "../../styles/partials/mixins" as *;
 .video{
     padding:0;
     width:100%;

@@ -1,8 +1,6 @@
-@import "../../styles/partials/variables" ;
-@import "../../styles/partials/mixins";
-// For TA or marker:
-//@import is an older feature of Sass, but @use is not working for me at the moment, 
-// so I am using import. I would greatly appreciate any comments on how to properly use @use.
+@use "../../styles/partials/variables" as * ;
+@use "../../styles/partials/mixins" as *;
+
 .container{
     @include desktop{
         display:flex;

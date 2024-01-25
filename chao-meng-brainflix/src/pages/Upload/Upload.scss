@@ -1,0 +1,9 @@
+@use "../../styles/partials/variables" as * ;
+@use "../../styles/partials/mixins" as *;
+.upload{
+    &__divider{
+        @include details__divider;
+        width:100vw;
+        margin:1rem 0 2rem 0;
+    }
+}

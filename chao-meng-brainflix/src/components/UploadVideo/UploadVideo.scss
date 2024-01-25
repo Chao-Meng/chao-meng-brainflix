@@ -1,0 +1,132 @@
+@use "../../styles/partials/variables" as * ;
+@use "../../styles/partials/mixins" as *;
+.upVideo{
+    margin-top:-0.5rem;
+    margin-left:1rem;
+    @include tablet{
+        margin-top:1.75rem;
+        margin-left:2.25rem;
+    }
+    @include desktop{
+        margin-top:0;
+    }
+    &__title{
+        font-size:$font-size-150;
+        opacity: 80%;
+        margin-bottom:1.2rem;
+        @include tablet{
+            font-size:$font-size-200;
+        }
+    }
+  
+   &__imgContainer{
+        width:100%;
+        margin-top:-0.2rem;
+    }
+    &__img{
+        width: calc(100% - 1rem);      
+        aspect-ratio: 18/9.9;
+        border-radius: 4px;
+        @include tablet{
+            width:98%;
+            height:38vh;
+            margin:0 auto; 
+        }
+        @include desktop{
+            width:67%;
+            height:33vh;
+            margin-top:0rem;
+        }
+    }
+    &__videoTitle{
+        height:2.1rem;
+        width: calc(100% - 1.3rem);  
+        align-items: center;
+        font-size:$font-size-75;
+        border-radius: 4px;
+        border:1px  solid $Mercury;
+        margin-bottom:1rem;
+        @include tablet{
+          flex:0 0 47%;
+        }
+        &::placeholder{
+            font-size:0.8rem;
+            color:$BrainFlix-DarkBlack;
+            opacity:80%;
+        }
+    }
+    &__videoDescr{
+        width: calc(100% - 1.3rem);
+        height:5rem;
+        border-radius: 4px;
+        border:1px solid $Mercury;
+        &::placeholder{
+            padding-top:0.5rem;
+            font-size:0.8rem;
+            color:$BrainFlix-DarkBlack;
+            opacity:80%;
+        }
+    }
+    &__form{
+        margin-top:0.5rem;
+    }
+    &__subtitle{
+        font-size:$font-size-80;
+        font-weight:600;
+        opacity:40%;
+    }
+    &__label{
+        font-size:$font-size-80;
+        font-weight:600;
+        opacity:40%;
+        line-height:1.375rem;
+    }
+    &__divider{
+        @include details__divider;
+        width:100vw;
+        margin-left:-1rem;
+        visibility: hidden;
+    }
+    &__buttonContainer{
+        margin-top:-1rem;
+    }
+    &__button{
+        width: calc(100vw - 2rem); 
+        margin-right:1rem;
+        height:2.5rem;
+        border-radius: 4px;
+        color:$White;
+        background-color:$BrainFlix-Blue;
+        border:none;
+        font-size:$font-size-75;
+        font-weight:bold;
+        position:relative;
+        &::before{
+            content: ""; 
+            background-image: url("../../assets/images/upload.svg");
+            background-size: contain; 
+            width: 20px; 
+            height: 20px; 
+            position: absolute; 
+            left: 10px; 
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        @include tablet{
+           margin-right:0.5rem;
+        }
+    }
+    &__buttonCancel{
+        width: calc(100vw - 2rem); 
+        margin-top:1.5rem;
+        margin-right:1rem;
+        height:2.5rem;
+        border-radius: 4px;
+        color:$BrainFlix-Blue;
+        background-color:$White;
+        border:none;
+        font-size:$font-size-75;
+        font-weight:bold;
+        position:relative;
+    }
+}
