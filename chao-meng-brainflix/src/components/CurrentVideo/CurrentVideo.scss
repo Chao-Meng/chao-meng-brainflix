@@ -27,8 +27,8 @@
         }
         @include desktop{
             width:67%;
-            //height:33vh;
-            margin-top:0rem;
+            height:calc(67vw * 9 / 16);
+            margin:0 auto; 
         }
     }
 }

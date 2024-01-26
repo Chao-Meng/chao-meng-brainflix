@@ -5,10 +5,8 @@ function CurrentVideo(props){
     }
     
 return(
-<div className="video"> 
-    <video  controls className="video__current" poster={props.video.image}>
-    <div className="video__current--container">
-    <img  className="video__current--cover" src={props.video.image} alt={props.video.title}/> </div>
+<div className="video">
+    <video  controls className="video__current"  poster={props.video.image}>
     Your browser does not support the video tag.
     </video>
 </div>)
