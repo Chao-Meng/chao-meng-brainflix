@@ -52,8 +52,8 @@ function VideoDetails(props){
                 </div>
                 <div className="comments__form--right">
                     <div className="comments__form--content">
-                        <label className="comments__label">JOIN THE VONVERSATION</label>
-                        <textarea type="text" className="comments__input"  placeholder=" Add a new comment"></textarea>
+                        <label htmlFor="comments__input" className="comments__label">JOIN THE VONVERSATION</label>
+                        <textarea type="text" id="comments__input" className="comments__input"  placeholder=" Add a new comment"></textarea>
                     </div>
                      <button className="comments__button">COMMENT</button>
                 </div>

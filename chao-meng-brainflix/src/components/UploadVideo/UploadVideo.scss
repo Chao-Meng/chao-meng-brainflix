@@ -16,17 +16,25 @@
         margin-bottom:1.2rem;
         @include tablet{
             font-size:$font-size-200;
+            margin-left:6.2rem;
         }
     }
     &__container{
         @include desktop{
             display: flex;
-            width:80vw;///////need
+            width:82vw;
+            height:20%;
+            gap:1rem;
+            justify-content: center;
+            margin-left:6.2rem;
         }
     }
    &__imgContainer{
         width:100%;
         margin-top:-0.2rem;
+        @include desktop{
+            width:48vw;
+        }
     }
     &__img{
         width: calc(100% - 1rem);      
@@ -37,9 +45,9 @@
             margin:0 auto; 
         }
         @include desktop{
-            width:67%;
-            height:33vh;
+            width:100%;
             margin-top:0rem;
+            height:90%;
         }
     }
     &__videoTitle{
@@ -74,17 +82,27 @@
             height:5.5rem;
             margin-bottom:-0.75rem;
         }
+        @include desktop{
+            height:40%;
+        }
     }
     &__form{
         margin-top:0.5rem;
         @include tablet{
             margin-right:1.25rem;
         }
+        @include desktop{
+            width:100vw;
+            margin-top:-1.5rem;
+        }
     }
     &__subtitle{
         font-size:$font-size-80;
         font-weight:600;
         opacity:40%;
+        @include desktop{
+            margin-left:6.2rem;
+        }
     }
     &__label{
         font-size:$font-size-80;
@@ -102,6 +120,10 @@
             margin-top:2rem;
             margin-bottom:1.5rem;
         }  
+        @include desktop{
+            width: 80vw;
+            margin-left:6.2rem;
+        }
     }
     &__buttonContainer{
         margin-top:-1rem;
@@ -114,6 +136,10 @@
            gap:0.5rem;
            margin-right:1.25rem;
            margin-top:1rem;
+        }
+        @include desktop{
+            width:80vw;
+            margin-left:6.2rem;
         }
     }
     &__buttonCancel{
