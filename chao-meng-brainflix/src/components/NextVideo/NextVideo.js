@@ -1,5 +1,5 @@
 import "./NextVideo.scss"
-function NextVideo(props){//or {videoData,onSelect,currentVideoId}
+function NextVideo(props){
     const videoData=props.videoData;
     const onSelect=props.onSelect;
     const currentVideoId=props.currentVideoId;

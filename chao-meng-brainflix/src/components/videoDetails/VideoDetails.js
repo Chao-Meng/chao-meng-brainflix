@@ -45,15 +45,15 @@ function VideoDetails(props){
              </>
         </section>
          <form className="comments">
-                 <p className="comments__title">{props.videoData.comments.length} Comments</p> 
+                <p className="comments__title">{props.videoData.comments.length} Comments</p> 
                 <div className="comments__form">
                 <div className="comments__form--left">
                     <img className="comments__avatar" src={avatar} alt={props.videoData.title}/>
                 </div>
                 <div className="comments__form--right">
                     <div className="comments__form--content">
-                        <label htmlFor="comments__input" className="comments__label">JOIN THE VONVERSATION</label>
-                        <textarea type="text" id="comments__input" className="comments__input"  placeholder=" Add a new comment"></textarea>
+                        <label  className="comments__label" htmlFor="commentsInput">JOIN THE VONVERSATION</label>
+                        <textarea name="comment" className="comments__input" id="commentsInput" placeholder=" Add a new comment"/>
                     </div>
                      <button className="comments__button">COMMENT</button>
                 </div>

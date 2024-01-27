@@ -7,11 +7,11 @@ function Header(){
 return(
 <header>
     <div className="header">
-        <a className="header__title"> 
+        <p className="header__title"> 
         <Link to="/">
             <img className="header__logo" src={logo}></img>
         </Link>
-        </a>
+        </p>
         <div className="header__container">
             <div className="header__container--left">
                 <input className="header__input" placeholder="Search" type="text"/>   
