@@ -1,3 +1,5 @@
+import { useState,useEffect } from 'react';
+import axios from "axios";
 import "./VideoDetails.scss"
 import views from "../../assets/images/views.svg"
 import likes from "../../assets/images/likes.svg"
@@ -11,7 +13,52 @@ function VideoDetails(props){
         year:'numeric'
     });
   }
- 
+  const [newComment, setNewComment] = useState("");
+  const [comments, setComments] = useState(props.videoData.comments || []);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const handleCommentChange = (e) => {
+    setNewComment(e.target.value);
+};
+
+ function handleAddComment(e){
+    e.preventDefault();
+    if (isSubmitting) 
+    {
+        return
+    }; 
+    setIsSubmitting(true);
+    const commentData={
+        name:"loginName",
+        comment:newComment
+    };
+    axios.post(`${props.API_URL}/videos/${props.currentVideoId}/comments`, commentData)
+    .then(response => {
+        const addedComment = response.data; 
+        setComments(currentComments => {
+            //keep the new comment on the top
+            const updatedComments = [addedComment,...currentComments];
+            console.log('Updated comments:', updatedComments);  
+            return updatedComments;
+    });
+        setNewComment("");
+        alert(`You have added comment successffuly.`);
+    })
+    .catch(error => {
+      console.error("Error adding comment: ", error);
+    })
+    //reset the submitting, or only added next comment after refreash page
+    .finally(() => {
+        setIsSubmitting(false);  
+    });
+ }
+ useEffect(() => {
+    //sort the comment via time
+    const sortedComments = (props.videoData.comments || []).sort((a, b) => {
+        return new Date(b.timestamp) - new Date(a.timestamp);
+    });
+    setComments(sortedComments);
+}, [props.videoData.comments]);
+
   const likesNum = props.videoData?.likes;
   const viewsNum = props.videoData?.views;
 
@@ -44,7 +91,7 @@ function VideoDetails(props){
              <div className="details__descrip">{props.videoData.description}</div>
              </>
         </section>
-         <form className="comments">
+         <form className="comments" onSubmit={handleAddComment}>
                 <p className="comments__title">{props.videoData.comments.length} Comments</p> 
                 <div className="comments__form">
                 <div className="comments__form--left">
@@ -53,17 +100,17 @@ function VideoDetails(props){
                 <div className="comments__form--right">
                     <div className="comments__form--content">
                         <label  className="comments__label" htmlFor="commentsInput">JOIN THE VONVERSATION</label>
-                        <textarea name="comment" className="comments__input" id="commentsInput" placeholder=" Add a new comment"/>
+                        <textarea name="comment" className="comments__input" id="commentsInput" placeholder=" Add a new comment" value={newComment} onChange={handleCommentChange}/>
                     </div>
                      <button className="comments__button">COMMENT</button>
                 </div>
             </div>
-            {props.videoData.comments.map(comment => (
+            {comments.map(comment => (
             <div className="comments__list" key={comment.id}>
                  <div className="details__divider"></div>
                 <div className="comments__container">
                     <div className="comments__list--left"> 
-                        <img className="comments__avatar" />
+                        <img className="comments__avatar" alt=""/>
                     </div>
                     <div className="comments__list--right">
                         <div className="comments__list--up">

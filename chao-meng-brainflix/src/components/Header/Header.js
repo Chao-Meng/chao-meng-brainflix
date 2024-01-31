@@ -9,7 +9,7 @@ return(
     <div className="header">
         <p className="header__title"> 
         <Link to="/">
-            <img className="header__logo" src={logo}></img>
+            <img className="header__logo" src={logo} alt="logonpm"></img>
         </Link>
         </p>
         <div className="header__container">
@@ -18,7 +18,7 @@ return(
                 <button className="header__button">UPLOAD</button>
             </div>
             <div className="header__container--right">
-            <img className="header__avatar" src={avatar}></img>
+            <img className="header__avatar" src={avatar} alt=""></img>
             </div>
         </div>
     </div>

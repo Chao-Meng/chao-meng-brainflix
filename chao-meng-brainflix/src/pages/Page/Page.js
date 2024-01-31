@@ -7,9 +7,8 @@ import NextVideo from "../../components/NextVideo/NextVideo";
 import VideoDetails from "../../components/VideoDetails/VideoDetails";
 import axios from "axios";
 
+const API_URL=process.env.REACT_APP_API_URL
 function Page() {
-  const API_BASE_URL='https://project-2-api.herokuapp.com';
-  const API_KEY='053cc565-9868-4592-b9c3-096b59152586';
   const [videoData,setVideoData]=useState([]);
   const [currentVideoId,setCurrentVideoId]=useState([]);
   const [currentVideo, setCurrentVideo] = useState({});
@@ -17,9 +16,10 @@ function Page() {
   const navigate=useNavigate();
 
 useEffect(() => {
-    axios.get(`${API_BASE_URL}/videos?api_key=${API_KEY}`)
+    axios.get(`${API_URL}/videos`)
       .then(response => {
         setVideoData(response.data);
+        console.log("response",response.data);
         const firstVideoId=videoId||response.data[0].id;
         if (response.data.length > 0) {     
          setCurrentVideoId(firstVideoId);
@@ -34,7 +34,8 @@ useEffect(() => {
   }, [videoId,navigate]);
 
 const getVideoDetails = (videoId) => {
-    axios.get(`${API_BASE_URL}/videos/${videoId}?api_key=${API_KEY}`)
+    console.log('Video ID:', `${API_URL}/videos/${videoId}`);
+    axios.get(`${API_URL}/videos/${videoId}`)
       .then(response => {
         setCurrentVideo(response.data);
       })
@@ -49,9 +50,12 @@ const getVideoDetails = (videoId) => {
       getVideoDetails(currentVideoId);
     }
   }, [currentVideoId]); 
-  
+  //add comment callback
+//   const onCommentAdded = () => {
+//     getVideoDetails(currentVideoId);
+// };
   useEffect(() => {
-    const video = videoData.find(video => video.id === currentVideoId);
+    //const video = videoData.find(video => video.id === currentVideoId);
   }, [videoId]);
 
   const handleVideoSelect = (newVideoId) => {
@@ -65,10 +69,10 @@ const getVideoDetails = (videoId) => {
         <main>
             {currentVideo &&<CurrentVideo video={currentVideo}/>}
             <div className="app__container">
-                {currentVideo && <VideoDetails  className="app__videoDetails" videoData={currentVideo}  onSelect={handleVideoSelect} 
-                currentVideoId={videoId}/>}
+                {currentVideo && <VideoDetails  className="app__videoDetails" videoData={currentVideo}   API_URL={API_URL}  onSelect={handleVideoSelect} 
+                currentVideoId={videoId} />}
                 <div className="app__divider"></div>
-                <NextVideo className="app__videoList" videoData={videoData} 
+                <NextVideo className="app__videoList" videoData={videoData}
                 onSelect={handleVideoSelect} 
                 currentVideoId={currentVideoId}/>
             </div>
