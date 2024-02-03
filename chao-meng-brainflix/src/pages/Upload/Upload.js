@@ -1,13 +1,14 @@
-import Header from '../../components/Header/Header';
+import Header from "../../components/Header/Header";
 import UploadVideo from "../../components/UploadVideo/UploadVideo";
-import "./Upload.scss"
+import "./Upload.scss";
 function Upload() {
-    return (
-       <>
-            <Header/>
-            <div className="upload__divider"></div>
-            <UploadVideo/>
-        </>
-    )
+  //const API_URL=process.env.REACT_APP_API_URL
+  return (
+    <>
+      <Header />
+      <div className="upload__divider"></div>
+      <UploadVideo />
+    </>
+  );
 }
-export default Upload
+export default Upload;
