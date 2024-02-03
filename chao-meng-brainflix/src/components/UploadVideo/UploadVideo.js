@@ -22,11 +22,6 @@ function UploadVideo() {
         .then((response) => {
           if (response.status === 201) {
             alert("Your video has been published");
-            if (response.data && response.data.image) {
-              console.log("Cover image URL:", response.data.image);
-            } else {
-              console.log("No image URL in the response");
-            }
             navigate("/");
           } else {
             console.error("Unexpected response", response);
@@ -37,6 +32,7 @@ function UploadVideo() {
       console.error("Error uploading video", error);
     }
   };
+
   return (
     <div className="upVideo">
       <h1 className="upVideo__title">Upload Video</h1>
