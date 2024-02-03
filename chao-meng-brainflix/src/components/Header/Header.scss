@@ -1,85 +1,94 @@
-@use "../../styles/partials/variables" as * ;
+@use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
-.header{
-    width:100%;
-    @include tablet{
-        display:flex;
-        justify-content: flex-start;
+.header {
+  width: 100vw;
+  @include tablet {
+    display: flex;
+    justify-content: flex-start;
+  }
+  &__title {
+    display: flex;
+    justify-content: center;
+    margin: 0.9rem 0;
+    @include tablet {
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 26.9vw;
+      margin-left: 2.25rem;
     }
-    &__title{
-        display:flex;
-        justify-content: center;
-        margin:0.9rem 0;
-        @include tablet{
-            justify-content:flex-start;
-            align-items: flex-start;
-            width:26.9vw;
-            margin-left:2.25rem;
-        }
-        @include desktop{
-            justify-content: flex-start;
-            align-items: center;
-            width:20vw;
-            margin:auto;
-            margin-left:8rem;
-        }
+    @include desktop {
+      justify-content: flex-start;
+      align-items: center;
+      width: 20vw;
+      margin: auto;
+      margin-left: 8rem;
     }
-    &__container{
-        display:flex;
-        margin-right:1rem;
-        @include tablet{
-            margin-top: 0.9rem;  
-        }
-        @include desktop{
-            width:49vw;
-        }
-        &--left{
-            display:flex;
-            flex-direction: column;
-            width:80%;
-            margin-left:1rem;
-            gap:1rem;
-            @include tablet{
-                flex-direction: row;
-                width:56vw;
-                justify-content: space-around;
-                gap:1.5rem;
-            }
-            @include desktop{
-                width:33vw;
-                margin-right:1.5rem;
-            }
-        }
-        &--right{
-            width:10%;    
-        }
-    } 
-    &__input{
-        height:2rem;
-        background-image: url("../../assets/images/search.svg");
-        background-size:1rem;
-        background-position: 0.3rem center;
-        background-repeat:no-repeat;
-        align-items: center;
-        padding-left:2rem;
-        font-size:$font-size-75;
-        border-radius: 4px;
-        border:1px  solid $Mercury;
-        @include tablet{
-          flex:0 0 47%;
-        }
+  }
+  &__container {
+    display: flex;
+    margin-right: 1rem;
+    @include tablet {
+      margin-top: 0.9rem;
     }
-    &__avatar{
-        width:2.25rem;
-        height:2.25rem;
-        border-radius: 50%;
-        margin-left:0.8rem;
-        @include tablet{
-            width:2.5rem;
-            height:2.5rem;
-        }
+    @include desktop {
+      width: 49vw;
     }
-    &__button{
+    &--left {
+      display: flex;
+      flex-direction: column;
+      width: 80%;
+      margin-left: 1rem;
+      gap: 1rem;
+      @include tablet {
+        flex-direction: row;
+        width: 56vw;
+        justify-content: space-around;
+        gap: 1.5rem;
+      }
+      @include desktop {
+        width: 33vw;
+        margin-right: 1.5rem;
+      }
+    }
+    &--right {
+      width: 10%;
+    }
+  }
+  &__input {
+    height: 2rem;
+    background-image: url("../../assets/images/search.svg");
+    background-size: 1rem;
+    background-position: 0.3rem center;
+    background-repeat: no-repeat;
+    align-items: center;
+    padding-left: 2rem;
+    font-size: $font-size-75;
+    border-radius: 4px;
+    border: 1px solid $Mercury;
+    @include tablet {
+      flex: 0 0 47%;
+    }
+  }
+  &__avatar {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    margin-left: 0.8rem;
+    @include tablet {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+  &__button {
+    width: calc(100vw - 2rem);
+    margin-right: 1rem;
+    height: 2.5rem;
+
+    &--upload {
+      @include tablet {
         @include universal__button;
+        width: 100%;
+      }
     }
+  }
 }

@@ -8,15 +8,15 @@ function Header() {
     <header>
       <div className="header">
         <p className="header__title">
-          <Link to="/">
-            <img className="header__logo" src={logo} alt="logonpm"></img>
+          <Link to="/" className="header__logo">
+            <img src={logo} alt="logonpm"></img>
           </Link>
         </p>
         <div className="header__container">
           <div className="header__container--left">
             <input className="header__input" placeholder="Search" type="text" />
-            <Link to="/videos/upload">
-              <button className="header__button">UPLOAD</button>
+            <Link to="/videos/upload" className="header__button">
+              <button className="header__button--upload">UPLOAD</button>
             </Link>
           </div>
           <div className="header__container--right">
